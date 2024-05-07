@@ -1,13 +1,18 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 
+const DEFAULT_TITLE = import.meta.env.VITE_APP_TITLE;
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
       name: 'home',
-      component: HomeView
+      component: HomeView,
+      meta: {
+        title: DEFAULT_TITLE,
+      },
     },
     {
       path: '/about',
